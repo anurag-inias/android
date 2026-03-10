@@ -79,6 +79,6 @@ extra_css:
   - assets/extra.css
 
 nav:
-  - About: "index.md"
+  - Activity: "index.md"
   - Concurrency:
     - Coroutines: "concurrency/coroutines.md"

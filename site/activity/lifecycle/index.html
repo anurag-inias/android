@@ -343,10 +343,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#oncreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onCreate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onResume
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onpause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onPause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#three-ways-activities-die" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Three ways Activities die:
+        Three ways Activities die
       
     </span>
   </a>
@@ -478,10 +533,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#oncreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onCreate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onstart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onresume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onResume
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onpause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onPause
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onstop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onStop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#three-ways-activities-die" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Three ways Activities die:
+        Three ways Activities die
       
     </span>
   </a>
@@ -507,7 +617,33 @@
 
 <h1 id="lifecycle">Lifecycle</h1>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://developer.android.com/guide/components/images/activity_lifecycle.png" data-desc-position="bottom"><img alt="" src="https://developer.android.com/guide/components/images/activity_lifecycle.png"></a></p>
-<h2 id="three-ways-activities-die">Three ways Activities die:</h2>
+<h2 id="oncreate">onCreate</h2>
+<ul>
+<li>must be implemented.</li>
+<li>perform basic application startup logic that happens once in the entire life of the activity.</li>
+<li>e.g. bind data ot lists, instantiate class-scope varibales, associate activity with a <code>ViewModel</code>.</li>
+</ul>
+<h2 id="onstart">onStart</h2>
+<ul>
+<li>completes quickly and activity does not remain in this state for long.</li>
+</ul>
+<h2 id="onresume">onResume</h2>
+<ul>
+<li>can be called multiple times as the app loses focus and then regains it (e.g. user receiving phone call).</li>
+</ul>
+<h2 id="onpause">onPause</h2>
+<ul>
+<li>activity is no longer in the foreground, but may still be visible.</li>
+<li>is very brief and does not have enough time for any save operations.</li>
+</ul>
+<h2 id="onstop">onStop</h2>
+<ul>
+<li>release or adjust resources that are not needed while the app is not visible. e.g. pause animations or switch location from fine-grained to coarse-grained.</li>
+<li>can use this to perform relatively CPU-intensive shutdown operation. e.g. save information to a database.</li>
+</ul>
+<p>When in <code>STOPPED</code>, activity object is kept in memory, but not attached to the window manager.</p>
+<hr>
+<h2 id="three-ways-activities-die">Three ways Activities die</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Low memory kill</label><label for="__tabbed_1_2">Configuration change</label><label for="__tabbed_1_3">Graceful exit</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">

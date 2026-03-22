@@ -2,7 +2,36 @@
 
 ![](https://developer.android.com/guide/components/images/activity_lifecycle.png)
 
-## Three ways Activities die:
+## onCreate
+
+  - must be implemented.
+  - perform basic application startup logic that happens once in the entire life of the activity.
+  - e.g. bind data ot lists, instantiate class-scope varibales, associate activity with a `ViewModel`.
+
+## onStart
+
+  - completes quickly and activity does not remain in this state for long.
+
+## onResume
+
+  - can be called multiple times as the app loses focus and then regains it (e.g. user receiving phone call).
+
+## onPause
+
+  - activity is no longer in the foreground, but may still be visible.
+  - is very brief and does not have enough time for any save operations.
+
+## onStop
+
+  - release or adjust resources that are not needed while the app is not visible. e.g. pause animations or switch location from fine-grained to coarse-grained.
+  - can use this to perform relatively CPU-intensive shutdown operation. e.g. save information to a database.
+
+  When in `STOPPED`, activity object is kept in memory, but not attached to the window manager.
+
+
+---
+
+## Three ways Activities die
 
 === "Low memory kill"
     

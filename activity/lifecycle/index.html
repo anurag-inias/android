@@ -20,7 +20,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/fatigue-dark.svg">
+      <link rel="icon" href="../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
@@ -425,6 +425,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#onsaveinstancestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onSaveInstanceState
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#three-ways-activities-die" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -615,6 +626,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#onsaveinstancestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onSaveInstanceState
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#three-ways-activities-die" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -669,6 +691,18 @@
 <li>can use this to perform relatively CPU-intensive shutdown operation. e.g. save information to a database.</li>
 </ul>
 <p>When in <code>STOPPED</code>, activity object is kept in memory, but not attached to the window manager.</p>
+<h2 id="onsaveinstancestate">onSaveInstanceState</h2>
+<p>Since Android 9 (API 28), it is always called after <code>onStop</code>.</p>
+<dl>
+<dt>Prior to that, it could be either:</dt>
+<dd>
+<ol>
+<li><code>onPause -&gt; onSaveInstanceState -&gt; onStop</code>.</li>
+<li><code>onSaveInstanceState -&gt; onPause -&gt; onStop</code>.</li>
+</ol>
+</dd>
+</dl>
+<p><code>outState</code> has a strict total size limit of 1MB across the entire app, so effectively much smaller for a single activity.</p>
 <hr>
 <h2 id="three-ways-activities-die">Three ways Activities die</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Low memory kill</label><label for="__tabbed_1_2">Configuration change</label><label for="__tabbed_1_3">Graceful exit</label></div>

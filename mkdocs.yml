@@ -3,7 +3,7 @@ site_url: "https://listless.dev"
 theme:
   name: material
   logo: assets/fatigue-light.svg
-  favicon: assets/fatigue-dark.svg
+  favicon: assets/favicon.svg
   font:
     text: "Besley Medium"
     code:  Google Sans Code Semibold # "Mullet"

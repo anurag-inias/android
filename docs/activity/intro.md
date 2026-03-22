@@ -2,7 +2,7 @@
 
 === "Activity class"
 
-    ```kotlin
+    ```kotlin linenums="1"
     package com.example.playground
 
     import android.os.Bundle
@@ -12,12 +12,18 @@
 
     class MainActivity : AppCompatActivity() {
 
+      private var count = 1
+
       override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.v(TAG, "#onCreate")
 
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        if (savedInstanceState != null) { // (1)
+          count = savedInstanceState.getInt(COUNT_KEY)
+        }
       }
 
       override fun onRestart() {
@@ -28,6 +34,11 @@
       override fun onStart() {
         super.onStart()
         Log.v(TAG, "#onStart")
+      }
+
+      override fun onRestoreInstanceState(savedInstanceState: Bundle) { // (2)
+        super.onRestoreInstanceState(savedInstanceState)
+        count = savedInstanceState.getInt(COUNT_KEY)
       }
 
       override fun onResume() {
@@ -45,6 +56,11 @@
         super.onStop()
       }
 
+      override fun onSaveInstanceState(outState: Bundle) { // (3)
+        super.onSaveInstanceState(outState)
+        outState.putInt(COUNT_KEY, count)
+      }
+
       override fun onDestroy() {
         Log.v(TAG, "#onDestroy")
         super.onDestroy()
@@ -52,9 +68,14 @@
 
       companion object {
         private const val TAG = "MainActivity"
+        private const val COUNT_KEY = "COUNT"
       }
     }
     ```
+
+    1. Restore the state if it exists
+    2. Alternative: Dedicated restore method (called after `onStart`)
+    3. Since Android 9+, it is now always called after `onStop`. <br> <br> Prior to Android 9 (API 28), it used to be called before `onStop`, but not guaranteed if before or after `onPause`. 
 
 === "Manifest"
 

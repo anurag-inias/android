@@ -28,6 +28,16 @@
 
   When in `STOPPED`, activity object is kept in memory, but not attached to the window manager.
 
+## onSaveInstanceState
+
+Since Android 9 (API 28), it is always called after `onStop`.
+
+Prior to that, it could be either:
+
+  : 1. `onPause -> onSaveInstanceState -> onStop`.
+    2. `onSaveInstanceState -> onPause -> onStop`.
+
+`outState` has a strict total size limit of 1MB across the entire app, so effectively much smaller for a single activity.
 
 ---
 

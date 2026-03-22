@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://listless.dev/</loc>
-         <lastmod>2026-03-10</lastmod>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://listless.dev/activity/intro/</loc>
+         <lastmod>2026-03-22</lastmod>
+    </url>
+    <url>
+         <loc>https://listless.dev/activity/lifecycle/</loc>
+         <lastmod>2026-03-22</lastmod>
     </url>
     <url>
          <loc>https://listless.dev/concurrency/coroutines/</loc>
-         <lastmod>2026-03-10</lastmod>
+         <lastmod>2026-03-22</lastmod>
     </url>
 </urlset>

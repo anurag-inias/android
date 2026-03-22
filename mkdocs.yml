@@ -6,7 +6,7 @@ theme:
   favicon: assets/fatigue-dark.svg
   font:
     text: "Besley Medium"
-    code: "Mullet"
+    code:  Google Sans Code Semibold # "Mullet"
   features:
     - content.code.copy
     - content.code.annotate
@@ -79,6 +79,8 @@ extra_css:
   - assets/extra.css
 
 nav:
-  - Activity: "index.md"
+  - Activity:
+    - Intro: "activity/intro.md"
+    - Lifecycle: "activity/lifecycle.md"
   - Concurrency:
     - Coroutines: "concurrency/coroutines.md"

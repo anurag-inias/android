@@ -1,1 +1,1 @@
-# Activity
+<meta http-equiv="refresh" content="0; url=/activity/intro">

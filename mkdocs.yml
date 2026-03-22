@@ -79,6 +79,7 @@ extra_css:
   - assets/extra.css
 
 nav:
+  - <a href="https://listless.dev">↖ Back</a>: "back"
   - Activity:
     - Intro: "activity/intro.md"
     - Lifecycle: "activity/lifecycle.md"
